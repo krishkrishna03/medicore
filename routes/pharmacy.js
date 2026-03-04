@@ -66,9 +66,20 @@ router.delete('/:id', requireRole('admin'), async (req, res) => {
 router.put('/:id/restock', requireRole('admin'), async (req, res) => {
     try {
         const { quantity } = req.body;
-        await Medicine.findByIdAndUpdate(req.params.id, { $inc: { quantity: +quantity } });
+        const id = req.params.id;
+        if (!id) return res.status(400).json({ success: false, message: 'Medicine ID required' });
+        if (quantity === undefined || quantity === null || isNaN(quantity)) {
+            return res.status(400).json({ success: false, message: 'Valid quantity required' });
+        }
+        // optional: ensure id is valid ObjectId
+        const mongoose = require('mongoose');
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ success: false, message: 'Invalid medicine ID' });
+        }
+        await Medicine.findByIdAndUpdate(id, { $inc: { quantity: +quantity } });
         res.json({ success: true, message: 'Stock updated' });
     } catch (err) {
+        console.error('Restock error:', err);
         res.status(500).json({ success: false, message: 'Server error' });
     }
 });
