@@ -28,6 +28,13 @@ router.get('/stats', async (req, res) => {
         const totalRevenue = allBills.filter(b => b.status === 'paid').reduce((s, b) => s + b.amount, 0);
         const pendingBills = allBills.filter(b => b.status === 'unpaid').length;
 
+        // attach `id` helper to medicines so frontend can use either property
+        const lowStockMeds = lowMeds.map(m => {
+            const obj = m.toObject ? m.toObject() : { ...m };
+            obj.id = obj._id; // alias for convenience
+            return obj;
+        });
+
         const recentAppointments = recentAppts.map(a => ({
             id: a._id,
             patient_name: a.patient_id?.user_id?.name || '—',
@@ -40,7 +47,7 @@ router.get('/stats', async (req, res) => {
 
         res.json({
             success: true,
-            data: { totalDoctors, totalPatients, todayAppointments: todayAppts, pendingAppointments: pendingAppts, totalRevenue, pendingBills, recentAppointments, lowStockMeds: lowMeds },
+            data: { totalDoctors, totalPatients, todayAppointments: todayAppts, pendingAppointments: pendingAppts, totalRevenue, pendingBills, recentAppointments, lowStockMeds },
         });
     } catch (err) {
         console.error(err);
