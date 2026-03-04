@@ -1,0 +1,594 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediCore HMS — Modern Hospital Management</title>
+    <meta name="description"
+        content="MediCore Hospital Management System — Streamlined patient care, doctor scheduling, billing and pharmacy in one powerful platform." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════ HOME SITE ═══════════════ -->
+    <div id="home-site">
+
+        <!-- NAV -->
+        <nav class="site-nav" id="siteNav">
+            <div class="nav-container">
+                <a href="#hero" class="nav-brand" onclick="scrollTo('#hero')">
+                    <div class="brand-icon"><i class="fas fa-hospital-alt"></i></div>
+                    <span>MediCore <strong>HMS</strong></span>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#hero" onclick="smoothScroll('#hero')">Home</a></li>
+                    <li><a href="#about" onclick="smoothScroll('#about')">About</a></li>
+                    <li><a href="#services" onclick="smoothScroll('#services')">Services</a></li>
+                    <li><a href="#doctors" onclick="smoothScroll('#doctors')">Doctors</a></li>
+                    <li><a href="#contact" onclick="smoothScroll('#contact')">Contact</a></li>
+                </ul>
+                <button class="btn-login-nav" onclick="showLoginModal()">
+                    <i class="fas fa-sign-in-alt"></i> Login / Register
+                </button>
+                <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileNav()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-award"></i> Trusted by 500+ Healthcare Professionals</div>
+                <h1>Modern Healthcare<br /><span class="gradient-text">Management Platform</span></h1>
+                <p>Streamline your hospital operations — patient records, appointments, billing and pharmacy all in one
+                    powerful, secure system.</p>
+                <div class="hero-cta">
+                    <button class="btn-hero-primary" onclick="showLoginModal()">
+                        <i class="fas fa-rocket"></i> Get Started
+                    </button>
+                    <button class="btn-hero-outline" onclick="smoothScroll('#about')">
+                        <i class="fas fa-play-circle"></i> Learn More
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat"><span class="stat-num">10k+</span><span class="stat-label">Patients
+                            Managed</span></div>
+                    <div class="hero-stat-sep"></div>
+                    <div class="hero-stat"><span class="stat-num">500+</span><span class="stat-label">Doctors
+                            Onboarded</span></div>
+                    <div class="hero-stat-sep"></div>
+                    <div class="hero-stat"><span class="stat-num">99.9%</span><span class="stat-label">Uptime SLA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card-float card-float-1">
+                    <i class="fas fa-calendar-check" style="color:#10b981"></i>
+                    <div><strong>Appointment Booked</strong><small>Dr. Sarah, 10:30 AM</small></div>
+                </div>
+                <div class="hero-card-float card-float-2">
+                    <i class="fas fa-pills" style="color:#f59e0b"></i>
+                    <div><strong>Prescription Ready</strong><small>Room 204</small></div>
+                </div>
+                <div class="hero-card-float card-float-3">
+                    <i class="fas fa-chart-line" style="color:#3b82f6"></i>
+                    <div><strong>Revenue up 24%</strong><small>This month</small></div>
+                </div>
+                <div class="hero-dashboard-mock">
+                    <div class="mock-header">
+                        <div class="mock-dot red"></div>
+                        <div class="mock-dot yellow"></div>
+                        <div class="mock-dot green"></div>
+                        <span style="color:#64748b;font-size:11px;margin-left:8px;">MediCore Dashboard</span>
+                    </div>
+                    <div class="mock-stat-row">
+                        <div class="mock-stat blue"><i class="fas fa-user-md"></i><span>48</span><small>Doctors</small>
+                        </div>
+                        <div class="mock-stat green"><i
+                                class="fas fa-users"></i><span>1.2k</span><small>Patients</small></div>
+                        <div class="mock-stat purple"><i class="fas fa-calendar"></i><span>24</span><small>Today</small>
+                        </div>
+                    </div>
+                    <div class="mock-bar-container">
+                        <div class="mock-bar-label">Appointments this week</div>
+                        <div class="mock-bars">
+                            <div class="mock-bar" style="height:40%"><span>Mon</span></div>
+                            <div class="mock-bar" style="height:70%"><span>Tue</span></div>
+                            <div class="mock-bar active" style="height:90%"><span>Wed</span></div>
+                            <div class="mock-bar" style="height:55%"><span>Thu</span></div>
+                            <div class="mock-bar" style="height:65%"><span>Fri</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-badge">About Us</div>
+                    <h2>Transforming Healthcare <span class="gradient-text">Operations</span></h2>
+                    <p>MediCore HMS was built to eliminate paperwork and streamline workflows so your team can focus on
+                        what matters most — patient care.</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-visual">
+                        <div class="about-img-wrapper">
+                            <div class="about-img-inner">
+                                <i class="fas fa-hospital" style="font-size:6rem;color:rgba(59,130,246,0.3)"></i>
+                                <div class="about-badge-float">
+                                    <i class="fas fa-shield-alt" style="color:#10b981"></i>
+                                    <div><strong>HIPAA Compliant</strong><small>Secure & Private</small></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <div class="about-feature">
+                            <div class="about-icon" style="background:rgba(59,130,246,0.15);color:#3b82f6"><i
+                                    class="fas fa-bolt"></i></div>
+                            <div>
+                                <h4>Real-time Operations</h4>
+                                <p>Live dashboards for admins, doctors and patients — no refresh needed. Everything
+                                    updates instantly.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-icon" style="background:rgba(16,185,129,0.15);color:#10b981"><i
+                                    class="fas fa-lock"></i></div>
+                            <div>
+                                <h4>Secure Role-Based Access</h4>
+                                <p>Admins, doctors and patients each access only what they need. JWT-protected with
+                                    bcrypt encryption.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-icon" style="background:rgba(139,92,246,0.15);color:#8b5cf6"><i
+                                    class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Automated Notifications</h4>
+                                <p>Doctors receive login credentials by email when onboarded. Patients get alerts for
+                                    appointments and bills.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-icon" style="background:rgba(245,158,11,0.15);color:#f59e0b"><i
+                                    class="fas fa-mobile-alt"></i></div>
+                            <div>
+                                <h4>Works Everywhere</h4>
+                                <p>Fully responsive design that works seamlessly on desktop, tablet, and mobile devices.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="section section-alt">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-badge">Services</div>
+                    <h2>Everything Your Hospital <span class="gradient-text">Needs</span></h2>
+                    <p>A complete suite of tools to manage every aspect of your hospital in one place.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card" style="--card-color:#3b82f6;--card-bg:rgba(59,130,246,0.12)">
+                        <div class="service-icon"><i class="fas fa-user-check"></i></div>
+                        <h3>Patient Management</h3>
+                        <p>Register patients, manage medical records, allergies, blood groups and complete health history.</p>
+                    </div>
+                    <div class="service-card" style="--card-color:#10b981;--card-bg:rgba(16,185,129,0.12)">
+                        <div class="service-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <h3>Smart Scheduling</h3>
+                        <p>Real-time slot availability, one-click appointment booking and automatic conflict prevention.</p>
+                    </div>
+                    <div class="service-card" style="--card-color:#8b5cf6;--card-bg:rgba(139,92,246,0.12)">
+                        <div class="service-icon"><i class="fas fa-user-md"></i></div>
+                        <h3>Doctor Portal</h3>
+                        <p>Doctors view their daily schedule, write prescriptions, add diagnoses and manage patient records.</p>
+                    </div>
+                    <div class="service-card" style="--card-color:#f59e0b;--card-bg:rgba(245,158,11,0.12)">
+                        <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3>Billing &amp; Payments</h3>
+                        <p>Auto-generate consultation bills, track outstanding payments and process multiple payment methods.</p>
+                    </div>
+                    <div class="service-card" style="--card-color:#ef4444;--card-bg:rgba(239,68,68,0.12)">
+                        <div class="service-icon"><i class="fas fa-pills"></i></div>
+                        <h3>Pharmacy Inventory</h3>
+                        <p>Track medicine stock levels, get low-stock alerts, manage pricing and restock with one click.</p>
+                    </div>
+                    <div class="service-card" style="--card-color:#06b6d4;--card-bg:rgba(6,182,212,0.12)">
+                        <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Visualize hospital performance &mdash; appointments, revenue trends, doctor workload at a glance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCTORS SECTION -->
+        <section id="doctors" class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-badge">Our Team</div>
+                    <h2>Expert <span class="gradient-text">Medical Professionals</span></h2>
+                    <p>Our platform supports a wide range of specializations. Here are some featured specialties.</p>
+                </div>
+                <div class="specialties-grid">
+                    <div class="specialty-pill" style="--sp-color:#8b5cf6"><i class="fas fa-brain"
+                            style="color:#8b5cf6"></i><span>Neurology</span></div>
+                    <div class="specialty-pill" style="--sp-color:#ef4444"><i class="fas fa-heart"
+                            style="color:#ef4444"></i><span>Cardiology</span></div>
+                    <div class="specialty-pill" style="--sp-color:#f59e0b"><i class="fas fa-bone"
+                            style="color:#f59e0b"></i><span>Orthopedics</span></div>
+                    <div class="specialty-pill" style="--sp-color:#10b981"><i class="fas fa-child"
+                            style="color:#10b981"></i><span>Pediatrics</span></div>
+                    <div class="specialty-pill" style="--sp-color:#3b82f6"><i class="fas fa-eye"
+                            style="color:#3b82f6"></i><span>Ophthalmology</span></div>
+                    <div class="specialty-pill" style="--sp-color:#06b6d4"><i class="fas fa-tooth"
+                            style="color:#06b6d4"></i><span>Dentistry</span></div>
+                    <div class="specialty-pill" style="--sp-color:#ec4899"><i class="fas fa-female"
+                            style="color:#ec4899"></i><span>Gynecology</span></div>
+                    <div class="specialty-pill" style="--sp-color:#6366f1"><i class="fas fa-lungs"
+                            style="color:#6366f1"></i><span>Pulmonology</span></div>
+                    <div class="specialty-pill" style="--sp-color:#14b8a6"><i class="fas fa-microscope"
+                            style="color:#14b8a6"></i><span>Pathology</span></div>
+                    <div class="specialty-pill" style="--sp-color:#f97316"><i class="fas fa-allergies"
+                            style="color:#f97316"></i><span>Dermatology</span></div>
+                    <div class="specialty-pill" style="--sp-color:#a855f7"><i class="fas fa-stethoscope"
+                            style="color:#a855f7"></i><span>General Medicine</span></div>
+                    <div class="specialty-pill" style="--sp-color:#22d3ee"><i class="fas fa-syringe"
+                            style="color:#22d3ee"></i><span>Oncology</span></div>
+                </div>
+                <div style="text-align:center;margin-top:3rem;">
+                    <button class="btn-hero-primary" onclick="showLoginModal()">
+                        <i class="fas fa-calendar-plus"></i> Book an Appointment
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section section-alt">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-badge">Contact Us</div>
+                    <h2>Get In <span class="gradient-text">Touch</span></h2>
+                    <p>Have questions? Our team is happy to help. Send us a message and we'll respond within 24 hours.
+                    </p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <div class="contact-icon" style="background:rgba(59,130,246,0.15);color:#3b82f6"><i
+                                    class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Healthcare Boulevard<br />Medical District, City 400001</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon" style="background:rgba(16,185,129,0.15);color:#10b981"><i
+                                    class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 98765 43210<br />+91 12345 67890</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon" style="background:rgba(139,92,246,0.15);color:#8b5cf6"><i
+                                    class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@medicorehms.com<br />support@medicorehms.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon" style="background:rgba(245,158,11,0.15);color:#f59e0b"><i
+                                    class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>Mon-Fri: 8AM – 8PM<br />Emergency: 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-card">
+                        <h3>Send us a Message</h3>
+                        <form id="contactForm" onsubmit="submitContactForm(event)">
+                            <div class="form-row">
+                                <div class="form-group"><label>Your Name *</label><input class="form-control"
+                                        id="cf_name" placeholder="John Doe" required /></div>
+                                <div class="form-group"><label>Email *</label><input class="form-control" type="email"
+                                        id="cf_email" placeholder="you@example.com" required /></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Phone</label><input class="form-control" id="cf_phone"
+                                        placeholder="+91 ..." /></div>
+                                <div class="form-group"><label>Subject</label><input class="form-control"
+                                        id="cf_subject" placeholder="How can we help?" /></div>
+                            </div>
+                            <div class="form-group"><label>Message *</label><textarea class="form-control"
+                                    id="cf_message" rows="4" placeholder="Tell us more..." required></textarea></div>
+                            <button type="submit" class="btn btn-primary" style="width:100%;" id="cfSubmitBtn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="nav-brand" style="margin-bottom:0.75rem;">
+                        <div class="brand-icon"><i class="fas fa-hospital-alt"></i></div>
+                        <span>MediCore <strong>HMS</strong></span>
+                    </div>
+                    <p>Modern healthcare management for the modern hospital.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h5>Platform</h5>
+                    <a href="#" onclick="smoothScroll('#services')">Services</a>
+                    <a href="#" onclick="showLoginModal()">Patient Portal</a>
+                    <a href="#" onclick="showLoginModal()">Doctor Login</a>
+                    <a href="#" onclick="showLoginModal()">Admin Panel</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <a href="#" onclick="smoothScroll('#about')">About Us</a>
+                    <a href="#" onclick="smoothScroll('#contact')">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 MediCore HMS. All rights reserved.</span>
+            </div>
+        </footer>
+
+    </div><!-- /#home-site -->
+
+    <!-- ═══════════════ LOGIN / REGISTER OVERLAY ═══════════════ -->
+    <div id="auth-overlay" class="auth-overlay hidden">
+        <div class="auth-modal">
+            <button class="auth-close" onclick="hideAuthOverlay()"><i class="fas fa-times"></i></button>
+
+            <!-- Tabs -->
+            <div class="auth-tabs" id="authTabs">
+                <button class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">Login</button>
+                <button class="auth-tab" id="tab-register" onclick="switchAuthTab('register')">Register</button>
+            </div>
+
+            <!-- LOGIN FORM -->
+            <div id="auth-login">
+                <div class="auth-logo">
+                    <div class="brand-icon"><i class="fas fa-hospital-alt"></i></div>
+                    <div>
+                        <h3>Welcome Back</h3>
+                        <p>Enter your credentials — we'll detect your role automatically</p>
+                    </div>
+                </div>
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input class="form-control" type="email" id="loginEmail" placeholder="your@email.com"
+                                required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                            <input class="form-control" type="password" id="loginPassword" placeholder="••••••••"
+                                required />
+                            <button type="button" class="toggle-pw" onclick="togglePw('loginPassword',this)"><i
+                                    class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div id="loginError" class="auth-error hidden"></div>
+                    <button type="submit" class="btn btn-primary auth-submit" id="loginBtn">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                </form>
+                <div class="auth-demo">
+                    <div class="auth-demo-label">Quick Demo Access</div>
+                    <div class="auth-demo-btns">
+                        <button onclick="demoLogin('admin@hospital.com','Admin@123')" class="demo-btn demo-admin"><i
+                                class="fas fa-shield-alt"></i> Admin</button>
+                    </div>
+                </div>
+                <p class="auth-switch">Don't have an account? <button onclick="switchAuthTab('register')">Register as
+                        Patient</button></p>
+            </div>
+
+            <!-- REGISTER FORM -->
+            <div id="auth-register" class="hidden">
+                <div class="auth-logo">
+                    <div class="brand-icon" style="background:linear-gradient(135deg,#10b981,#059669)"><i
+                            class="fas fa-user-plus"></i></div>
+                    <div>
+                        <h3>Create Patient Account</h3>
+                        <p>Register to book appointments and manage your health</p>
+                    </div>
+                </div>
+                <form id="registerForm" onsubmit="handleRegister(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <div class="input-icon"><i class="fas fa-user"></i><input class="form-control" id="regName"
+                                    placeholder="John Doe" required /></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <div class="input-icon"><i class="fas fa-envelope"></i><input class="form-control"
+                                    type="email" id="regEmail" placeholder="you@email.com" required /></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <div class="input-icon"><i class="fas fa-phone"></i><input class="form-control"
+                                    id="regPhone" placeholder="+91..." /></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Blood Group</label>
+                            <select class="form-control" id="regBlood">
+                                <option value="">Select</option>
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="form-control" id="regGender">
+                                <option value="">Select</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input class="form-control" type="date" id="regDob" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password *</label>
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                            <input class="form-control" type="password" id="regPassword" placeholder="Min 6 characters"
+                                required minlength="6" />
+                            <button type="button" class="toggle-pw" onclick="togglePw('regPassword',this)"><i
+                                    class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div id="regError" class="auth-error hidden"></div>
+                    <button type="submit" class="btn btn-primary auth-submit" id="registerBtn">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </form>
+                <p class="auth-switch">Already have an account? <button onclick="switchAuthTab('login')">Sign
+                        In</button></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ DASHBOARD APP ═══════════════ -->
+    <div id="app-section" class="hidden">
+        <div class="app-layout">
+            <!-- SIDEBAR -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <div class="brand">
+                        <div class="brand-icon"><i class="fas fa-hospital-alt"></i></div>
+                        <span>MediCore <strong>HMS</strong></span>
+                    </div>
+                </div>
+                <nav class="sidebar-nav" id="sidebarNav"></nav>
+                <div id="sidebarUser"></div>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <div class="main-content">
+                <!-- Top Bar -->
+                <header class="top-bar">
+                    <div class="top-bar-left">
+                        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+                        <div class="breadcrumb" id="breadcrumb">Dashboard</div>
+                    </div>
+                    <div class="top-bar-right">
+                        <div class="notif-wrapper">
+                            <button class="icon-btn" id="notifBtn">
+                                <i class="fas fa-bell"></i>
+                                <span class="notif-badge hidden" id="notifBadge">0</span>
+                            </button>
+                            <div class="notif-panel hidden" id="notifPanel">
+                                <div class="notif-panel-header">
+                                    <strong>Notifications</strong>
+                                    <button id="markAllRead"
+                                        style="font-size:0.78rem;color:var(--primary);background:none;border:none;cursor:pointer;">Mark
+                                        all read</button>
+                                </div>
+                                <div class="notif-list" id="notifList"></div>
+                            </div>
+                        </div>
+                        <div class="user-widget" id="userMenu">
+                            <div class="user-avatar" id="userAvatar">U</div>
+                            <span id="userName">User</span>
+                            <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i>
+                            <div class="user-dropdown hidden" id="userDropdown">
+                                <a href="#" id="profileLink"><i class="fas fa-user"></i> My Profile</a>
+                                <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Page Content -->
+                <main class="page-content" id="pageContent">
+                    <div class="loader">
+                        <div class="spinner"></div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay hidden" id="modalOverlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Modal</h3>
+                <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts — order matters -->
+    <script src="/js/api.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/pages/admin.js"></script>
+    <script src="/js/pages/doctor.js"></script>
+    <script src="/js/pages/patient.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>
