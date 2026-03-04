@@ -17,10 +17,6 @@ const publicRoutes = require('./routes/public');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -38,22 +34,21 @@ app.use('/api/billing', billingRoutes);
 app.use('/api/pharmacy', pharmacyRoutes);
 app.use('/api/public', publicRoutes);
 
-// Serve frontend SPA for all non-API routes
+// Serve frontend SPA
 app.get(/^(?!\/api).*$/, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Initialize MongoDB then start server
+// Initialize DB then start server
 initDatabase()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`🏥 Hospital Management System  →  http://localhost:${PORT}`);
+      console.log(`🏥 Hospital Management System → http://localhost:${PORT}`);
       console.log(`🍃 Database: MongoDB`);
       console.log(`📋 Default Admin: admin@hospital.com / Admin@123`);
     });
   })
   .catch(err => {
     console.error('❌ Failed to connect to MongoDB:', err.message);
-    console.error('   Make sure MongoDB is running: mongod');
     process.exit(1);
   });
